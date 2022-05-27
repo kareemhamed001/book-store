@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+:root {
+    --purple: #8e44ad;
+    --red: #c0392b;
+    --orange: #f39c12;
+    --black: #333;
+    --white: #fff;
+    --light-color: #666;
+    --light-white: #ccc;
+    --light-bg: #f5f5f5;
+    --header-color: #064635;
+    --main-color: #519259;
+    --menu-color: #9e9e9e;
+    --hover-color: #f4eea9;
+    --border: 0.1rem solid var(--black);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    
+}
+*::selection {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+*::-webkit-scrollbar {
+    height: 0.5rem;
+    width: 1rem;
+}
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: var(--purple);
+}
+
+section{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 5em ;
+}
+.div1{
+    
+    margin-left: 55px;
+    margin-right: 5%;
+}
+.div1 h2{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 42px;
+    margin-bottom: 3%;
+}
+.div1 img{
+    width: 350px;
+    height: 470px;
+    box-shadow: 1px 1px 8px 8px rgba(14, 49, 95, 0.534);
+}
+.div2{
+    border: 1px solid gray;
+    width: 60%;
+    border-radius: 5px;
+    text-align: start;
+    margin-top: 3%;
+    padding: 15px; 
+    box-shadow: 2px 2px 2px 2px gray;
+}
+.div2 p{
+    color: #182a79;
+    margin-bottom: 1%;
+    border-bottom: 1px solid gray;
+    margin-bottom: 2%;
+    font-weight: 900;
+    
+    padding-bottom: 11px;
+    margin-right: 5px;
+    font-size: 20px;
+}
+.div2 span{
+    color: rgb(104, 103, 103);
+    font-weight: 600;
+    margin-left: 15px;
+    font-size: 15px;
+    margin-top: 15px;
+}
+footer{
+    display: flex;
+    justify-content: end;
+    margin-right: 5%;  
+}
+.btn{
+    background-color: #2980a5;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+.btn:hover{
+    background-color: black;
+    padding: 12px;
+}
+.loly{
+    display: grid;
+    gap: 5px;
+}
+form{
+    float: right;
+}
+
+form input[type="number"]{
+    padding: 0.2em 0.5em;
+    background-color: #eee;
+    font-size: 2em;
+    border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+}

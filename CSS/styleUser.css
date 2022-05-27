@@ -1,0 +1,1082 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+
+:root {
+    --main-color: #2980a5;
+    --secondry-color: #3dc795;
+    --orange: #ff9c00;
+    --black: #333;
+    --white: #fff;
+    --light-color: #666;
+    --light-white: #ccc;
+    --light-bg: #f5f5f5;
+    --border: 0.1rem solid var(--black);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+* {
+    font-family: "Rubik", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    /* transition: all 0.2s linear; */
+}
+
+*::selection {
+    background-color: var(--main-color);
+    color: var(--white);
+}
+
+*::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+section.products-home,section.about {
+    padding: 1em 22em;
+}
+section.products{
+    padding: 2em 3em 0em 3em;
+}
+section.shopping-cart{
+    padding: 5em;
+}
+
+header{
+    position:sticky;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    padding: 2em 15em;
+    background-color: #eee;
+    display: grid;
+    grid-template-areas: "logo logo logo nav nav nav icon icon icon ";
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0.0625em 0.0625em 0.3125em black;
+}
+header .account-box.active {
+    display: inline-block;
+}
+header .account-box-menu.active {
+    display: flex;
+}
+
+header a.logo{
+    width: 100%;
+    grid-area: logo;
+    display: inline-block;
+    color:var(--main-color);
+    font-size: 3em;
+    font-weight: 800;
+    justify-self: start;
+    
+}
+header nav.navbar{
+    width: 100%;
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+}
+header nav.navbar a{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    color: var(--secondry-color);
+    font-size: 2em;
+    transition:all 0.4s  ease;
+    -webkit-transition:all 0.4s  ease;
+    -moz-transition:all 0.4s  ease;
+    -ms-transition:all 0.4s  ease;
+    -o-transition:all 0.4s  ease;
+}
+
+header .icons{
+    width: 100%;
+    grid-area: icon;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+header .account-box{
+    z-index: 10000;
+    position: absolute;
+    top: 120%;
+    right: 2em;
+    width: 12em;
+    box-shadow: var(--box-shadow);
+    border-radius: 0.5em;
+    padding: 2em;
+    text-align: center;
+    border-radius: 0.5em;
+    border: var(--border);
+    background-color: var(--white);
+    animation: fadeIn 0.2s linear;
+    display: none;
+}
+
+header .account-box form button:hover{
+    background-color: var(--secondry-color);
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+header .icons .icon{
+    text-align: center;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 2em;
+    transition:all 0.4s ease;
+    -webkit-transition:all 0.4s ease;
+    -moz-transition:all 0.4s ease;
+    -ms-transition:all 0.4s ease;
+    -o-transition:all 0.4s ease;
+}
+header nav.navbar a:hover,header nav.navbar a.active,header .icons .icon:hover,header .active{
+    color: var(--main-color) !important;
+    transform: scale(1.0.5);
+    text-decoration: underline;
+    -webkit-transform: scale(1.0.5);
+    -moz-transform: scale(1.0.5);
+    -ms-transform: scale(1.0.5);
+    -o-transform: scale(1.0.5);
+}
+header .icons span{
+    display: inline-block;
+    color: var(--secondry-color);
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 4rem;
+}
+
+.btn,
+.option-btn,
+.delete-btn,
+.white-btn {
+    display: inline-block;
+    margin: 0.2em;
+    padding: 0.5em;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 1.4em;
+    border-radius: 0.5rem;
+    text-align: center;
+    min-width: 7em;
+    text-transform: capitalize;
+    transition: 0.4s ease;
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -ms-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+}
+
+.btn:hover,
+.option-btn:hover,
+.delete-btn:hover {
+    background-color: var(--black);
+}
+
+.white-btn,
+.btn {
+    background-color: var(--main-color);
+}
+
+.option-btn {
+    background-color: var(--orange);
+}
+
+.delete-btn {
+    background-color: var(--secondry-color);
+}
+
+.white-btn:hover {
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.heading {
+    min-height: 30vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: url(../images/heading-bg.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.heading h3 {
+    font-size: 5rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.heading p {
+    font-size: 2.5rem;
+    color: var(--light-color);
+}
+
+.heading p a {
+    color: var(--main-color);
+}
+
+.heading p a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0.2s;
+    }
+}
+
+.form-container {
+    min-height: 100vh;
+    background-color: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-container form {
+    padding: 2rem;
+    width: 50rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    background-color: var(--white);
+    text-align: center;
+}
+
+.form-container form h3 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.form-container form .box {
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border: var(--border);
+    margin: 1rem 0;
+}
+
+.form-container form p {
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.form-container form p a {
+    color: var(--main-color);
+}
+
+.form-container form p a:hover {
+    text-decoration: underline;
+}
+
+div.fromContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+#menu-btn {
+    display: none;
+}
+
+header .user-box {
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+    width: f;
+    display: none;
+    animation: fadeIn 0.2s linear;
+}
+
+header  .user-box.active {
+    display: inline-block;
+}
+
+header  .user-box p {
+    font-size: 2rem;
+    color: var(--light-color);
+    margin-bottom: 1.5rem;
+}
+
+header  .user-box p span {
+    color: var(--main-color);
+}
+
+header  .user-box .delete-btn {
+    margin-top: 0;
+}
+section.about{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.about h2{
+    font-size: 3em;
+    text-transform: capitalize;
+    margin: 1em;
+}
+
+section.about .flex .box{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0.5em;
+    width: 28em;
+    height: 41em;
+    margin: 0.5em;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #eee;
+    transition: all 0.4s ease;
+    box-shadow: 1px 1px 1px 1px rgba(128, 128, 128, 0.5);
+    border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+}
+section.about .flex .box .social-and-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+    height: 90%;
+    position: relative;
+    overflow: hidden;
+}
+
+section.about .flex .box .social-and-image .social-icons{
+    display: flex;
+    height: 100%;
+    width: 5em;
+    position: absolute;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    left: -5em;
+    border: 1px solid black;
+    background-color: #eee;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+}
+
+section.about .flex .box .social-and-image .social-icons a{
+    text-decoration: none;
+    font-size: 4em;
+    padding: 0.2em 0;
+    color: black;
+    border-radius: 0.2em;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    -webkit-border-radius: 0.2em;
+    -moz-border-radius: 0.2em;
+    -ms-border-radius: 0.2em;
+    -o-border-radius: 0.2em;
+}
+
+section.about .flex .box .social-and-image .social-icons a:hover{
+    background-color: #fff;
+}
+
+section.about .flex .box:hover .social-icons{
+    left: 0;
+}
+section.about .flex .box:hover{
+    transform: scale(1.02);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
+}
+
+section.about .flex .box img{
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
+}
+section.about p{
+    font-size: 1.2em;
+    margin: 0.5em;
+}
+section.about .flex .box h3{
+    font-size: 2em;
+    margin: 0.5em;
+}
+
+.home {
+    min-height: 70vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/lib2.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .content {
+    text-align: center;
+    width: 60rem;
+}
+
+.home .content h3 {
+    font-size: 5.5rem;
+    color: var(--white);
+    text-transform: uppercase;
+}
+
+.home .content p {
+    font-size: 1.8rem;
+    color: var(--light-white);
+    padding: 1rem 0;
+    line-height: 1.5;
+}
+
+.products .box-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.products .box-container .load-more{
+    justify-self: flex-end;
+    align-self: flex-start;
+}
+
+.products .box-container .box {
+    padding: 1.2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    margin: 0px;
+    background-color: #eee;
+    box-shadow: 0 0 1px 1px;
+    border-radius: 0.5em;
+    width: 240px;
+    height: 360px;
+}
+
+.products .box-container .box .image {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    height: 60%;
+}
+
+.products .box-container .box .name {
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: var(--black);
+}
+
+.products .box-container .box .qty {
+    width: 100%;
+    padding: 0.5em;
+    border-radius: 0.5rem;
+    border: var(--border);
+    margin: 0.2em;
+    font-size: 1.3em;
+}
+
+.products .box-container .box .content .price {
+    font-size: 1.5em;
+    margin: 0.2em;
+    border-radius: 0.3em;
+    text-align: center;
+    background-color: var(--secondry-color);
+    font-weight: bolder;
+    padding: 0.2em;
+    width: 95%;
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -ms-border-radius: 0.3em;
+    -o-border-radius: 0.3em;
+}
+
+.about .flex {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-contact {
+    background-color: var(--black);
+}
+
+.home-contact .content {
+    max-width: 60rem;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.home-contact .content h3 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--white);
+}
+
+.home-contact .content p {
+    padding: 1rem 0;
+    line-height: 1.5;
+    color: var(--light-white);
+    font-size: 1.7rem;
+}
+
+.contact form {
+    margin: 0 auto;
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+    border: var(--border);
+    padding: 2rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--black);
+}
+
+.contact form .box {
+    margin: 1rem 0;
+    width: 100%;
+    border: var(--border);
+    background-color: var(--white);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    border-radius: 0.5rem;
+}
+
+.contact form textarea {
+    height: 20rem;
+    resize: none;
+}
+
+.shopping-cart .box-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 30rem);
+    align-items: center;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.shopping-cart .box-container .box {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    border: var(--border);
+}
+
+.shopping-cart .box-container .box .fa-times {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    line-height: 4.5rem;
+    font-size: 2rem;
+    background-color: var(--secondry-color);
+    color: var(--white);
+    border-radius: 0.5rem;
+}
+
+.shopping-cart .box-container .box .fa-times:hover {
+    background-color: var(--black);
+}
+
+.shopping-cart .box-container .box img {
+    height: 30rem;
+}
+
+.shopping-cart .box-container .box .name {
+    padding: 1rem 0;
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.shopping-cart .box-container .box .price {
+    padding: 1rem 0;
+    font-size: 2.5rem;
+    color: var(--secondry-color);
+}
+
+.shopping-cart .box-container .box input[type="number"] {
+    margin: 0.5rem 0;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1.2rem 1.4rem;
+    font-size: 2rem;
+    color: var(--black);
+    width: 9rem;
+}
+
+.shopping-cart .box-container .box .sub-total {
+    padding-top: 1.5rem;
+    font-size: 2rem;
+    color: var(--light-color);
+}
+
+.shopping-cart .box-container .box .sub-total span {
+    color: var(--secondry-color);
+}
+
+.shopping-cart .cart-total {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-radius: 0.5rem;
+}
+
+.shopping-cart .cart-total p {
+    font-size: 2.5rem;
+    color: var(--light-color);
+}
+
+.shopping-cart .cart-total p span {
+    color: var(--secondry-color);
+}
+
+.shopping-cart .cart-total .flex {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1rem;
+    margin-top: 1.5rem;
+    justify-content: center;
+}
+
+.shopping-cart .disabled {
+    pointer-events: none;
+    opacity: 0.5;
+    user-select: none;
+}
+
+.checkout form {
+    max-width: 1200px;
+    padding: 2rem;
+    margin: 0 auto;
+    border: var(--border);
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+}
+
+.checkout form h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 3rem;
+}
+
+.checkout form .flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.checkout form .flex .inputBox {
+    flex: 1 1 40rem;
+}
+
+.checkout form .flex span {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.checkout form .flex select,
+.checkout form .flex input {
+    border: var(--border);
+    width: 100%;
+    border-radius: 0.5rem;
+    width: 100%;
+    background-color: var(--white);
+    padding: 1.2rem 1.4rem;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+}
+
+.search-form form {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 1rem;
+}
+
+.search-form form .btn {
+    margin-top: 0;
+}
+
+.search-form form .box {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    border: var(--border);
+    font-size: 2rem;
+    color: var(--black);
+    background-color: var(--light-bg);
+    border-radius: 0.5rem;
+}
+
+.footer {
+    background-color: var(--light-bg);
+}
+
+.footer .box-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+}
+
+.footer .box-container .box h3 {
+    text-transform: uppercase;
+    color: var(--black);
+    font-size: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer .box-container .box p,
+.footer .box-container .box a {
+    display: block;
+    font-size: 1.7rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+}
+
+.footer .box-container .box p i,
+.footer .box-container .box a i {
+    color: var(--main-color);
+    padding-right: 0.5rem;
+}
+
+.footer .box-container .box a:hover {
+    color: var(--main-color);
+    text-decoration: underline;
+}
+
+.footer .csecondry-colorit {
+    text-align: center;
+    font-size: 2rem;
+    color: var(--light-color);
+    border-top: var(--border);
+    margin-top: 2.5rem;
+    padding-top: 2.5rem;
+}
+
+.footer .csecondry-colorit span {
+    color: var(--main-color);
+}
+
+
+/* media queries  */
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-btn {
+        display: inline-block;
+    }
+
+    header  .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        border-bottom: var(--border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header  .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .navbar a {
+        display: block;
+        font-size: 2.5rem;
+        margin: 2rem;
+    }
+
+    .home .content h3 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading h3 {
+        font-size: 3.5rem;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+
+/* products */
+
+.products .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.products .box-container .box .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.7rem 1rem;
+    font-size: 2rem;
+    color: var(--pink);
+    background: rgba(255, 51, 153, 0.05);
+    z-index: 1;
+    border-radius: 0.5rem;
+}
+
+
+
+.products .box-container .box .image img {
+    height: 100%;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+}
+
+.products .box-container .box:hover .image img {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.products .box-container .box .image .icons {
+    position: absolute;
+    bottom: -7rem;
+    left: 0;
+    right: 0;
+    display: flex;
+}
+
+.products .box-container .box:hover .image .icons {
+    bottom: 0;
+}
+
+.products .box-container .box .image .icons a {
+    height: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    width: 50%;
+    color: var(--main-color);
+}
+
+.products .box-container .box .image .icons .cart-btn {
+    border-left: 0.1rem solid #fff7;
+    border-right: 0.1rem solid #fff7;
+    width: 100%;
+}
+
+.products .box-container .box .image .icons a:hover {
+    background: #333;
+}
+
+.products .box-container .box .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    
+    width: 100%;
+}
+
+.products .box-container .box .icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+}
+.products .box-container .box .icons form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.products .box-container .box .content h3 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.products .box-container .box .content .price span {
+    font-size: 1.5rem;
+    color: #999;
+    font-weight: lighter;
+    text-decoration: line-through;
+}
+/*orders*/
+section.orders{
+    width: 100%;
+    padding: 1em 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+section.orders > h2{
+    align-self: center;
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+section.orders div.order{
+    box-shadow: 1px 1px 1px 1px #80808042;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+    overflow: hidden;
+    height: 200px;
+    border-radius: 0.1em;
+    -webkit-border-radius: 0.1em;
+    -moz-border-radius: 0.1em;
+    -ms-border-radius: 0.1em;
+    -o-border-radius: 0.1em;
+}
+
+section.orders div.order div.info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--secondry-color);
+    color: white;
+    padding: 0.6em;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    height: 20%;
+}
+
+section.orders div.order div.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #eee;
+    padding: 1em;
+    height: 80%;
+    overflow: hidden;
+}
+
+section.orders div.order img{
+    max-height:100% ;
+    border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    -moz-border-radius: 0.4em;
+    -ms-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+}
+
+section.orders div.order div.details{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 0.6em;
+}
